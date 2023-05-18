@@ -12,7 +12,7 @@ const BookScreen = ({ match }) => {
     useEffect(() => {
         const fetchBook = async () => {
             console.log('request a book...')
-            const { data } = await axios.get(`http://lb-backend-1082150601.us-east-1.elb.amazonaws.com:8000/api/books/${match.params.id}`)
+            const { data } = await axios.get(`http://lb-backend-1414576499.us-east-1.elb.amazonaws.com/api/books/${match.params.id}`)
 
             setBook(data[0])
         }

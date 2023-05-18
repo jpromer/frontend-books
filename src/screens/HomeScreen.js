@@ -10,7 +10,7 @@ const HomeScreen = () => {
 
     useEffect( () => {
         const fetchBooks = async () => {
-            const { data } = await axios.get('http://lb-backend-1082150601.us-east-1.elb.amazonaws.com:8000/api/books')
+            const { data } = await axios.get('http://lb-backend-1414576499.us-east-1.elb.amazonaws.com/api/books')
             
             setBooks(data)
         }
