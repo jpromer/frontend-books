@@ -3,19 +3,14 @@ import axios from 'axios';
 import { Col, Row } from 'react-bootstrap';
 
 import Book from '../components/Book'
+import { dataBooks } from '../Assets/books';
 
 const HomeScreen = () => {
 
     const [books, setBooks] = useState([])
 
     useEffect( () => {
-        const fetchBooks = async () => {
-            const { data } = await axios.get('http://lb-backend-1414576499.us-east-1.elb.amazonaws.com/api/books')
-            
-            setBooks(data)
-        }
-        
-        fetchBooks()
+        setBooks(dataBooks)
     }, [])
 
     return (

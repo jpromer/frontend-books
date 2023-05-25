@@ -3,20 +3,15 @@ import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup } from 'react-bootstrap';
+import dataBooks from '../Assets/books';
 
 
 const BookScreen = ({ match }) => {
 
     const [book, setBook] = useState({})
 
-    useEffect(() => {
-        const fetchBook = async () => {
-            console.log('request a book...')
-            const { data } = await axios.get(`http://lb-backend-1414576499.us-east-1.elb.amazonaws.com/api/books/${match.params.id}`)
-
-            setBook(data[0])
-        }
-        fetchBook()
+    useEffect(() => {        
+        setBook(dataBooks[match.params.id])
     }, [match])
 
 
